@@ -15,3 +15,6 @@ try3_6: try3_6.cpp
 
 try3_8: try3_8.cpp
 	g++ -g -Wno-deprecated -o try3_8 try3_8.cpp
+
+try3_9: try3_9.cpp
+	g++ -g -Wno-deprecated -o try3_9 try3_9.cpp
