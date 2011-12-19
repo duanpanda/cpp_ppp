@@ -1,9 +1,9 @@
 CFLAG=-g -Wno-deprecated
 
-d1: d1.cpp
-d2: d2.cpp
-d3: d3.cpp
-d4: d4.cpp
-d5: d5.cpp
-d6: d6.cpp
+d3_1: d3_1.cpp
+d3_2: d3_2.cpp
+d3_3: d3_3.cpp
+d3_4: d3_4.cpp
+d3_5: d3_5.cpp
+d3_6: d3_6.cpp
 	g++ ${CFLAG} -o $@ $<
