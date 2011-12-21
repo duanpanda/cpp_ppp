@@ -13,19 +13,24 @@ try
 
   cout << "Please enter two floating-point values separated by an operator (+,-,*,/):\n";
   while (cin >> a >> op >> b) {
+    string oper = " ";
     double res = 0;
     switch (op) {
     case '+':
+      oper = "The sum of ";
       res = a + b;
       break;
     case '-':
+      oper = "The difference of ";
       res = a - b;
       break;
     case '*':
+      oper = "The product of ";
       res = a * b;
       break;
     case '/':
       if (b == 0) error("trying to devide by zero");
+      oper = "The ratio of ";
       res = a / b;
       break;
     default:
@@ -33,7 +38,7 @@ try
       break;
     }
 
-    cout << a << ' ' << op << ' ' << b << " == " << res << endl;
+    cout << oper << a << " and " << b << " is " << res << endl;
     cout << "Try again:\n";
   }
 }
