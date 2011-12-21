@@ -29,7 +29,7 @@ try
       res = a * b;
       break;
     case '/':
-      if (b == 0) error("trying to devide by zero");
+      if (b == 0) error("trying to divide by zero");
       oper = "The ratio of ";
       res = a / b;
       break;
