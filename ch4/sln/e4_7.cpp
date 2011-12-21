@@ -22,9 +22,9 @@ void init_num_dict()
 
 bool is_digit(const string& s)
 {
-  return s == "0" or s == "1" or s == "2" or s == "3" or s == "4" or
-    s == "5" || s == "6" || s == "7" || s == "8" || s == "9";
+  return (s.size() == 1) && s[0] >= '0' && s[0] <= '9';
 }
+
 // Return the corresponding digit value, or -1 to indicate not-found.
 int is_spelled_num(const string& s)
 {
