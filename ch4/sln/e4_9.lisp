@@ -1,0 +1,5 @@
+(do* ((i 2 (+ i 1))
+     (term 2 (* term 2))
+     (sum 3 (+ term sum)))
+    ((> i 64) sum)
+  (format t "i=~a, term=~a, sum=~a~%" i term sum))
