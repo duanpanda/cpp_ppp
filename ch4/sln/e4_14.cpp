@@ -17,16 +17,16 @@ try
 
     vector<int> judges(max+1, 1);
     for (int i=2; i<=max/2; ++i) {
-      if (judges.at(i)) {
+      if (judges[i]) {
         for (int j=2*i; j<=max; j+=i)
-          judges.at(j) = 0;
+          judges[j] = 0;
       }
     }
 
     // now all k such that judges[k] is true are prime
     vector<int> primes;
     for (int k=2; k<judges.size(); ++k) {
-      if (judges.at(k))
+      if (judges[k])
         primes.push_back(k);
     }
 
