@@ -5,7 +5,8 @@
  Advanced solution that I don't use now:
  1. make use of std::map.
 
- But I use struct and vector in case of sorting.
+ But I use struct and vector in case of sorting.  I could have use sorting, but
+it is overkill and slow.
 */
 
 #include "../../std_lib_facilities.h"
