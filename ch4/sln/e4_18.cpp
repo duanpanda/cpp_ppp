@@ -5,11 +5,10 @@
 int main()
 try
 {
-  cout << "Please input the coeffects a, b, and c, of the quadratic equation ax^2+bx+c=0, separated with whitespaces, enter 'q' to quit :\n";
+  cout << "Please input the coefficients a, b, and c, of the quadratic equation ax^2+bx+c=0, separated with whitespaces, enter 'q' or non-number to quit :\n";
   double a = 0;
   double b = 0;
   double c = 0;
-
   while (cin>>a>>b>>c) {
     if (a==0) {
       cout << "a==0, the equation degrades to linear: bx+c=0\n";
