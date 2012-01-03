@@ -10,6 +10,9 @@ e4_3: e4_3.cpp
 e4_4: e4_4.cpp
 	${CC} ${CFLAG} -o $@ $<
 
+e4_4_s: e4_4_s.cpp
+	${CC} ${CFLAG} -o $@ $<
+
 e4_5: e4_5.cpp
 	${CC} ${CFLAG} -o $@ $<
 
