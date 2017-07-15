@@ -1,5 +1,6 @@
 #include "rdvector.h"
 #include <algorithm>
+#include <iostream>
 
 RdVector::RdVector(size_t s)
 	: sz{ s }, elem{ new double[s] } // uninitialized memory for elements
@@ -13,14 +14,16 @@ RdVector::RdVector(std::initializer_list<double> lst)
 	std::copy(lst.begin(), lst.end(), elem);
 }
 
-RdVector::RdVector(const RdVector & a)
+RdVector::RdVector(const RdVector& a)
 	: sz{ a.sz }, elem{ new double[sz] }
 {
+	std::cout << "copy constructor" << std::endl;
 	std::copy(a.elem, a.elem + a.sz, elem);
 }
 
 RdVector& RdVector::operator=(const RdVector& a)
 {
+	std::cout << "copy assignment" << std::endl;
 	if (&a != this) {
 		double* p = new double[a.sz];
 		std::copy(a.elem, a.elem + a.sz, p);
@@ -34,21 +37,38 @@ RdVector& RdVector::operator=(const RdVector& a)
 RdVector::RdVector(RdVector&& a)
 	: sz(a.sz), elem{ a.elem }
 {
+	std::cout << "move constructor" << std::endl;
 	a.sz = 0;
 	a.elem = nullptr;
 }
 
 RdVector& RdVector::operator=(RdVector&& a)
 {
-	delete[] elem;
-	elem = a.elem;
-	sz = a.sz;
-	a.elem = nullptr;
-	a.sz = 0;
+	std::cout << "move assignment" << std::endl;
+	if (&a != this) {
+		delete[] elem;
+		elem = a.elem;
+		sz = a.sz;
+		a.elem = nullptr;
+		a.sz = 0;
+	}
 	return *this;
 }
 
 RdVector::~RdVector()
 {
-	delete[] elem;
+	std::cout << "destructor" << std::endl;
+	if (elem) {
+		delete[] elem;
+	}
+}
+
+std::ostream& operator<<(std::ostream& os, const RdVector& v)
+{
+	os << '[';
+	for (size_t i = 0; i < v.size(); ++i) {
+		os << ' ' << v[i];
+	}
+	os << " ]\n";
+	return os;
 }

@@ -19,5 +19,9 @@ int main()
 
 	ff(v, RdVector{ 1, 2, 3, 4 });
 
+	int a[20]{ 0 };
+	a[-3] = 80; // huh? dangerous
+	a[100] = 90; // huh? dangerous
+
 	keep_window_open();
 }
