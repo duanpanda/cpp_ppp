@@ -45,22 +45,22 @@ RdVector::RdVector(RdVector&& a)
 RdVector& RdVector::operator=(RdVector&& a)
 {
 	std::cout << "move assignment" << std::endl;
-	if (&a != this) {
-		delete[] elem;
-		elem = a.elem;
-		sz = a.sz;
-		a.elem = nullptr;
-		a.sz = 0;
-	}
+	//if (&a != this) {
+	delete[] elem;
+	elem = a.elem;
+	sz = a.sz;
+	a.elem = nullptr;
+	a.sz = 0;
+	//}
 	return *this;
 }
 
 RdVector::~RdVector()
 {
 	std::cout << "destructor" << std::endl;
-	if (elem) {
-		delete[] elem;
-	}
+	//if (elem) {
+	delete[] elem;
+	//}
 }
 
 std::ostream& operator<<(std::ostream& os, const RdVector& v)
